@@ -1,0 +1,130 @@
+.page {
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--base-size-16);
+}
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--base-size-12);
+  flex-wrap: wrap;
+}
+.back {
+  color: var(--fgColor-muted);
+  font-size: var(--text-body-size-small);
+  text-decoration: none;
+}
+.back:hover { color: var(--fgColor-accent); }
+.receipt {
+  padding: var(--base-size-32);
+  border: var(--borderWidth-thin) solid var(--borderColor-default);
+  border-radius: var(--borderRadius-large);
+  background: var(--bgColor-default);
+  display: flex;
+  flex-direction: column;
+  gap: var(--base-size-24);
+}
+.head {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--base-size-24);
+  flex-wrap: wrap;
+  padding-bottom: var(--base-size-24);
+  border-bottom: var(--borderWidth-thick, 2px) solid var(--borderColor-default);
+}
+.school {
+  font-size: var(--text-title-size-medium);
+  font-weight: var(--base-text-weight-semibold);
+}
+.schoolMeta {
+  color: var(--fgColor-muted);
+  font-size: var(--text-body-size-small);
+  margin-top: var(--base-size-4);
+}
+.titleBlock { text-align: right; }
+.title {
+  margin: 0;
+  font-size: var(--text-title-size-large);
+  font-weight: var(--base-text-weight-semibold);
+  letter-spacing: -0.01em;
+}
+.number {
+  color: var(--fgColor-muted);
+  font-variant-numeric: tabular-nums;
+  font-family: var(--fontStack-monospace);
+  font-size: var(--text-body-size-small);
+}
+.paid {
+  display: flex;
+  align-items: center;
+  gap: var(--base-size-8);
+  padding: var(--base-size-12) var(--base-size-16);
+  border-radius: var(--borderRadius-medium);
+  background: var(--bgColor-success-muted);
+  color: var(--fgColor-success);
+}
+.paid span { color: var(--fgColor-default); }
+.facts {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--base-size-16);
+}
+.facts dt {
+  color: var(--fgColor-muted);
+  font-size: var(--text-body-size-small);
+}
+.facts dd { margin: var(--base-size-2) 0 0; font-weight: var(--base-text-weight-medium); }
+.email { display: block; color: var(--fgColor-muted); font-weight: normal; font-size: var(--text-body-size-small); word-break: break-all; }
+.muted { color: var(--fgColor-muted); font-weight: normal; }
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table th,
+.table td {
+  padding: var(--base-size-8) 0;
+  text-align: left;
+  border-bottom: var(--borderWidth-thin) solid var(--borderColor-muted);
+}
+.table th + th, .table td + td { padding-left: var(--base-size-16); }
+.table thead th {
+  color: var(--fgColor-muted);
+  font-size: var(--text-body-size-small);
+  font-weight: var(--base-text-weight-semibold);
+}
+.table tfoot th, .table tfoot td {
+  border-bottom: 0;
+  border-top: var(--borderWidth-thick, 2px) solid var(--borderColor-default);
+  font-size: var(--text-body-size-large);
+}
+.table .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.footnote {
+  margin: 0;
+  color: var(--fgColor-muted);
+  font-size: var(--text-body-size-small);
+}
+
+@media (max-width: 543px) {
+  .receipt { padding: var(--base-size-16); }
+  .titleBlock { text-align: left; }
+}
+
+/* Print just the receipt, without the app's header and navigation. */
+@media print {
+  .toolbar { display: none; }
+  .receipt { border: 0; padding: 0; }
+  :global(body):has(.receipt) :global(header),
+  :global(body):has(.receipt) :global(aside),
+  :global(body):has(.receipt) :global(nav) {
+    display: none !important;
+  }
+  :global(body):has(.receipt) :global(main) {
+    padding: 0 !important;
+  }
+  :global(body):has(.receipt) :global([data-product]) {
+    display: block !important;
+  }
+}

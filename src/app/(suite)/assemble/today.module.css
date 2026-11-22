@@ -1,0 +1,146 @@
+.kids {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: var(--base-size-16);
+}
+.kid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--base-size-16);
+  padding: var(--base-size-16) var(--base-size-20, 20px);
+  border: var(--borderWidth-thin) solid var(--borderColor-default);
+  border-radius: var(--borderRadius-large);
+  background: var(--bgColor-default);
+  box-shadow: var(--shadow-resting-small);
+}
+.kidHead {
+  display: flex;
+  align-items: center;
+  gap: var(--base-size-12);
+}
+.kidName h2 {
+  margin: 0;
+  font-size: var(--text-title-size-small);
+  font-weight: var(--base-text-weight-semibold);
+}
+.kidName p {
+  margin: var(--base-size-2) 0 0;
+  color: var(--fgColor-muted);
+  font-size: var(--text-body-size-small);
+}
+.kidFacts {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--base-size-8);
+}
+.kidFacts > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--base-size-12);
+  font-size: var(--text-body-size-medium);
+}
+.kidFacts dt { color: var(--fgColor-muted); }
+.kidFacts dd { margin: 0; text-align: right; }
+.rate strong { font-variant-numeric: tabular-nums; }
+.kidActions {
+  display: flex;
+  gap: var(--base-size-8);
+  padding-top: var(--base-size-12);
+  border-top: var(--borderWidth-thin) solid var(--borderColor-muted);
+}
+
+.cardTitleWithCount {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--base-size-8);
+}
+.actionIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--borderRadius-full);
+}
+.actionIcon[data-tone="danger"] { background: var(--bgColor-danger-muted); color: var(--fgColor-danger); }
+.actionIcon[data-tone="attention"] { background: var(--bgColor-attention-muted); color: var(--fgColor-attention); }
+.actionIcon[data-tone="accent"] { background: var(--bgColor-accent-muted); color: var(--fgColor-accent); }
+
+.allDone {
+  display: flex;
+  align-items: center;
+  gap: var(--base-size-12);
+  padding: var(--base-size-16);
+  color: var(--fgColor-success);
+}
+.allDone span { color: var(--fgColor-default); }
+
+.noSchool {
+  margin: 0;
+  padding: var(--base-size-12) var(--base-size-16);
+  background: var(--bgColor-accent-muted);
+  color: var(--fgColor-default);
+  font-size: var(--text-body-size-small);
+  border-bottom: var(--borderWidth-thin) solid var(--borderColor-muted);
+}
+
+.classBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 var(--base-size-8);
+  border-radius: var(--borderRadius-medium);
+  background: var(--bgColor-accent-muted);
+  color: var(--fgColor-accent);
+  font-weight: var(--base-text-weight-semibold);
+}
+.quote {
+  display: block;
+  margin-top: var(--base-size-4);
+  color: var(--fgColor-default);
+  font-style: italic;
+}
+.reach {
+  display: flex;
+  flex-direction: column;
+  gap: var(--base-size-6);
+  margin-top: var(--base-size-2);
+}
+
+.rollTiles {
+  list-style: none;
+  margin: 0;
+  padding: var(--base-size-16);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+  gap: var(--base-size-8);
+}
+.rollTile {
+  display: flex;
+  flex-direction: column;
+  gap: var(--base-size-4);
+  padding: var(--base-size-8) var(--base-size-12);
+  border-radius: var(--borderRadius-medium);
+  border: var(--borderWidth-thin) solid var(--borderColor-danger-muted);
+  background: var(--bgColor-danger-muted);
+  color: var(--fgColor-default);
+  text-decoration: none;
+}
+.rollTile[data-done] {
+  border-color: var(--borderColor-success-muted);
+  background: var(--bgColor-success-muted);
+}
+.rollTile:hover { text-decoration: none; border-color: var(--borderColor-default); }
+.rollTileName { font-weight: var(--base-text-weight-semibold); font-size: var(--text-title-size-small); }
+.rollTileStatus {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--base-size-4);
+  font-size: var(--text-caption-size);
+  color: var(--fgColor-muted);
+}
+.rollTile[data-done] .rollTileStatus svg { color: var(--fgColor-success); }
