@@ -102,6 +102,14 @@ export function yearLabel(year: number, state = "VIC"): string {
   }
 }
 
+const HONORIFICS = /^(mr|mrs|ms|miss|mx|dr|prof|coach|sir|fr|sr)\.?$/i;
+
+/** "Mr Daniel Reyes" → "Daniel"; "Coach Ben Walsh" → "Ben". */
+export function firstName(name: string): string {
+  const parts = name.trim().split(/\s+/);
+  return (parts.length > 1 && HONORIFICS.test(parts[0]!) ? parts[1] : parts[0]) ?? name;
+}
+
 export function initials(name: string): string {
   const parts = name.trim().split(/\s+/);
   return ((parts[0]?.[0] ?? "") + (parts.length > 1 ? (parts.at(-1)?.[0] ?? "") : "")).toUpperCase();

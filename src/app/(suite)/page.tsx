@@ -2,7 +2,7 @@ import { HomeView } from "./HomeView";
 import { assembleSummary } from "@/lib/assemble/summary";
 import { feteSummary } from "@/lib/fete/summary";
 import { quadSummary } from "@/lib/quad/summary";
-import { yearLabel } from "@/lib/format";
+import { firstName, yearLabel } from "@/lib/format";
 import { getViewer } from "@/lib/viewer";
 
 export const dynamic = "force-dynamic";
@@ -16,7 +16,7 @@ export default async function HomePage() {
   ]);
   return (
     <HomeView
-      firstName={viewer.name.split(" ")[0] ?? viewer.name}
+      firstName={firstName(viewer.name)}
       schoolName={viewer.school.name}
       role={viewer.role}
       students={viewer.students.map((s) => ({

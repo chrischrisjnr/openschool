@@ -49,3 +49,11 @@ test("passwords hash and verify", async () => {
   assert.ok(await verifyPassword("correct horse battery", h));
   assert.equal(await verifyPassword("wrong", h), false);
 });
+
+test("firstName skips titles", async () => {
+  const { firstName } = await import("../src/lib/format");
+  assert.equal(firstName("Mr Daniel Reyes"), "Daniel");
+  assert.equal(firstName("Dr Helen Okafor"), "Helen");
+  assert.equal(firstName("Sarah Walker"), "Sarah");
+  assert.equal(firstName("Cher"), "Cher");
+});

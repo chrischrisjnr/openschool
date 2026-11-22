@@ -18,7 +18,8 @@
 .header {
   position: sticky;
   top: 0;
-  z-index: 20;
+  /* Kept low so Primer dialogs and menus (portalled, z-index 1+) sit above it. */
+  z-index: 1;
   height: var(--os-header-height);
   display: flex;
   align-items: center;
@@ -138,6 +139,7 @@
 .product {
   display: grid;
   grid-template-columns: 260px minmax(0, 1fr);
+  align-content: start;
   min-height: calc(100vh - var(--os-header-height));
 }
 
@@ -190,10 +192,11 @@
     display: block;
     position: sticky;
     top: var(--os-header-height);
-    z-index: 10;
+    z-index: 1;
     background: var(--bgColor-default);
   }
   .mobileTabs {
+    position: relative; /* contain absolutely-positioned screen-reader text */
     display: flex;
     gap: var(--base-size-4);
     margin: 0;

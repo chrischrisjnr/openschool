@@ -97,6 +97,17 @@ All settings are listed in [`.env.example`](./.env.example).
 - Useful commands: `npm run dev`, `npm run lint` (type-check), `npm test`,
   `npm run build`.
 
+## What's next
+
+Ideas and known gaps, roughly in priority order — contributions welcome:
+
+- Email and push notifications (new notices, payments due, unread messages)
+- School term dates editable in settings (currently Victorian 2026–27 defaults)
+- Editing payment items after they're created
+- Parent–teacher interview booking
+- Multi-server real-time chat (Quad currently runs on a single server process)
+- Translations for families who speak languages other than English
+
 ## Licence
 
 [GNU AGPL v3](./LICENSE). You're free to use, change and share Open Schools. If
