@@ -1,0 +1,62 @@
+/* Primer design tokens (https://primer.style/foundations/primitives) */
+@import "@primer/primitives/dist/css/primitives.css";
+@import "@primer/primitives/dist/css/functional/themes/light.css";
+@import "@primer/primitives/dist/css/functional/themes/dark.css";
+
+/*
+ * Open Schools product accents. Each app gets a colour so families always
+ * know where they are, built from Primer's own scale tokens so they adapt to
+ * light and dark mode automatically.
+ */
+:root {
+  --os-assemble: var(--fgColor-accent);
+  --os-assemble-bg: var(--bgColor-accent-muted);
+  --os-quad: var(--fgColor-done);
+  --os-quad-bg: var(--bgColor-done-muted);
+  --os-fete: var(--fgColor-severe);
+  --os-fete-bg: var(--bgColor-severe-muted);
+  --os-header-height: 56px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  background: var(--bgColor-default);
+  color: var(--fgColor-default);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--fgColor-accent);
+}
+
+/* Respect users who prefer less motion. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

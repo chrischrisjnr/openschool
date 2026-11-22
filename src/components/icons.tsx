@@ -1,0 +1,73 @@
+"use client";
+
+/**
+ * Server components can't pass icon components to client components (they
+ * aren't serialisable), so navigation and other props refer to icons by name.
+ * Add new names here as you need them.
+ */
+import {
+  AlertIcon,
+  BellIcon,
+  BookIcon,
+  CalendarIcon,
+  CheckCircleIcon,
+  ChecklistIcon,
+  CommentDiscussionIcon,
+  CreditCardIcon,
+  FlameIcon,
+  GearIcon,
+  GiftIcon,
+  GraphIcon,
+  HeartIcon,
+  HomeIcon,
+  InboxIcon,
+  MegaphoneIcon,
+  MortarBoardIcon,
+  PeopleIcon,
+  PersonIcon,
+  DeviceMobileIcon,
+  PlusIcon,
+  ShareIcon,
+  LinkIcon,
+  PinIcon,
+  ReportIcon,
+  RocketIcon,
+  ShieldCheckIcon,
+  StarIcon,
+  TrophyIcon,
+  type Icon,
+} from "@primer/octicons-react";
+
+export const icons = {
+  alert: AlertIcon,
+  bell: BellIcon,
+  book: BookIcon,
+  calendar: CalendarIcon,
+  check: CheckCircleIcon,
+  checklist: ChecklistIcon,
+  chat: CommentDiscussionIcon,
+  card: CreditCardIcon,
+  flame: FlameIcon,
+  gear: GearIcon,
+  gift: GiftIcon,
+  graph: GraphIcon,
+  heart: HeartIcon,
+  home: HomeIcon,
+  inbox: InboxIcon,
+  megaphone: MegaphoneIcon,
+  school: MortarBoardIcon,
+  people: PeopleIcon,
+  person: PersonIcon,
+  mobile: DeviceMobileIcon,
+  plus: PlusIcon,
+  share: ShareIcon,
+  link: LinkIcon,
+  pin: PinIcon,
+  report: ReportIcon,
+  rocket: RocketIcon,
+  shield: ShieldCheckIcon,
+  star: StarIcon,
+  trophy: TrophyIcon,
+} satisfies Record<string, Icon>;
+
+export type IconName = keyof typeof icons;
