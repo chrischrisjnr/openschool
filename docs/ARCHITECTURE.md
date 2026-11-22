@@ -7,7 +7,7 @@ database and one login:
 | --- | --- | --- |
 | **Assemble** | `/assemble` | Compass, Xuno, Sentral parent portals — notices, calendar, permission & payments, attendance |
 | **Quad** | `/quad` | Facebook groups / WhatsApp chats / Slack — community spaces & direct messages |
-| **FETE** | `/fete`, public `/give/...` | School Colour Run / fun-run fundraising platforms |
+| **Fete** | `/fete`, public `/give/...` | School Colour Run / fun-run fundraising platforms |
 
 A family logs in once and moves between apps with the switcher in the header.
 

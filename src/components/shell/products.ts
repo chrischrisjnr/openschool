@@ -19,7 +19,7 @@ export const PRODUCTS: Record<
       "Friendly spaces for your class, year level, P&C and interest groups, plus private messages with teachers.",
   },
   fete: {
-    name: "FETE",
+    name: "Fete",
     href: "/fete",
     tagline: "Fundraising",
     description:

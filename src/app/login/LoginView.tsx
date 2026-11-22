@@ -27,7 +27,7 @@ export function LoginView({ next, demoAccounts }: { next?: string; demoAccounts:
         <ul className={styles.apps} aria-label="Included apps">
           <li><ProductMark product="assemble" size={20} /> Assemble</li>
           <li><ProductMark product="quad" size={20} /> Quad</li>
-          <li><ProductMark product="fete" size={20} /> FETE</li>
+          <li><ProductMark product="fete" size={20} /> Fete</li>
         </ul>
 
         <form action={action} className={styles.form}>

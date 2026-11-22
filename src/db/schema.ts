@@ -1,7 +1,7 @@
 /**
  * Open Schools database schema.
  *
- * One database serves the whole suite (Assemble, Quad and FETE) so that a
+ * One database serves the whole suite (Assemble, Quad and Fete) so that a
  * family has a single login and the same students, classes and houses are
  * shared by every app.
  *
@@ -168,7 +168,7 @@ export const guardians = sqliteTable(
 );
 
 /* ------------------------------------------------------------------ */
-/* Payments (shared by Assemble charges and FETE donations)            */
+/* Payments (shared by Assemble charges and Fete donations)            */
 /* ------------------------------------------------------------------ */
 
 export type PaymentStatus = "pending" | "succeeded" | "failed" | "cancelled";
@@ -527,7 +527,7 @@ export const quadReports = sqliteTable("quad_reports", {
 });
 
 /* ------------------------------------------------------------------ */
-/* FETE: fundraising campaigns                                         */
+/* Fete: fundraising campaigns                                         */
 /* ------------------------------------------------------------------ */
 
 export const feteCampaigns = sqliteTable("fete_campaigns", {

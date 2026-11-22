@@ -2,7 +2,7 @@
   "name": "open-schools",
   "version": "0.1.0",
   "private": true,
-  "description": "Open Schools \u2014 free, open-source school platforms: Assemble (school-family communication), Quad (community chat) and FETE (fundraising).",
+  "description": "Open Schools \u2014 free, open-source school platforms: Assemble (school-family communication), Quad (community chat) and Fete (fundraising).",
   "license": "AGPL-3.0-or-later",
   "scripts": {
     "dev": "next dev",

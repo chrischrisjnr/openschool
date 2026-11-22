@@ -9,7 +9,7 @@ Open Schools is one website with three apps that share a single login:
 |---|---|---|---|
 | 📣 | **Assemble** | Notices, calendar, permission slips & payments, attendance and absence notes | Compass, Xuno, Sentral parent portal, Operoo |
 | 💬 | **Quad** | Friendly chat spaces for each class, year level, the P&C and interest groups, plus private messages with teachers | Facebook groups, WhatsApp chats, Slack |
-| ❤️ | **FETE** | Fundraising for colour runs, fun runs and readathons — every student gets a page and QR code, with class, year and house leaderboards and points | Commercial fun-run fundraising platforms |
+| ❤️ | **Fete** | Fundraising for colour runs, fun runs and readathons — every student gets a page and QR code, with class, year and house leaderboards and points | Commercial fun-run fundraising platforms |
 
 Built with GitHub's [Primer design system](https://primer.style), so it's clean,
 accessible and works in light and dark mode on phones, tablets and computers.

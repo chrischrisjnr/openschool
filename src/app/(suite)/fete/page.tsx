@@ -1,5 +1,5 @@
 import { PageTitle } from "@/components/ui";
 
-export default function FETEHome() {
-  return <PageTitle title="FETE" description="Coming soon." />;
+export default function FeteHome() {
+  return <PageTitle title="Fete" description="Coming soon." />;
 }

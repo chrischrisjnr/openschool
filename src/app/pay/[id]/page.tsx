@@ -12,7 +12,7 @@ export const dynamic = "force-dynamic";
 /**
  * Simulated checkout used when Stripe isn't configured ("demo" provider).
  * Payment ids are unguessable, so this page is safe to show without login
- * (donors to FETE pages usually aren't signed in).
+ * (donors to Fete pages usually aren't signed in).
  */
 export default async function DemoCheckoutPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
