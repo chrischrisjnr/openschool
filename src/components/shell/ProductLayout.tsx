@@ -1,6 +1,6 @@
 "use client";
 
-import { CounterLabel, NavList, UnderlineNav } from "@primer/react";
+import { CounterLabel, NavList } from "@primer/react";
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
@@ -93,22 +93,29 @@ export function ProductLayout({
         {aside ? <div className={styles.sidebarAside}>{aside}</div> : null}
       </aside>
 
-      <div className={styles.mobileNav}>
-        <UnderlineNav aria-label={PRODUCTS[product].name}>
-          {nav.map((item) => (
-            <UnderlineNav.Item
-              key={item.href}
-              as={NextLink}
-              href={item.href}
-              icon={icons[item.icon]}
-              counter={item.count || undefined}
-              aria-current={isActive(pathname, item) ? "page" : undefined}
-            >
-              {item.label}
-            </UnderlineNav.Item>
-          ))}
-        </UnderlineNav>
-      </div>
+      {/* Phones: a sideways-scrolling tab bar, so every section stays one tap away. */}
+      <nav className={styles.mobileNav} aria-label={PRODUCTS[product].name}>
+        <ul className={styles.mobileTabs}>
+          {nav.map((item) => {
+            const Icon = icons[item.icon];
+            const active = isActive(pathname, item);
+            return (
+              <li key={item.href}>
+                <NextLink
+                  href={item.href}
+                  className={styles.mobileTab}
+                  aria-current={active ? "page" : undefined}
+                  ref={active ? (el) => el?.scrollIntoView({ block: "nearest", inline: "center" }) : undefined}
+                >
+                  <Icon size={16} />
+                  {item.label}
+                  {item.count ? <CounterLabel>{item.count}</CounterLabel> : null}
+                </NextLink>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
 
       <main id="main" className={wide ? styles.mainWide : styles.main}>
         {children}
