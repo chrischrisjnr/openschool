@@ -11,7 +11,7 @@
     "lint": "tsc --noEmit",
     "db:seed": "tsx scripts/seed.ts",
     "db:reset": "tsx scripts/seed.ts --reset",
-    "test": "DATABASE_PATH=:memory: tsx --conditions=react-server --test tests/*.test.ts"
+    "test": "tsx --conditions=react-server --import ./tests/setup.ts --test \"tests/**/*.test.ts\""
   },
   "dependencies": {
     "@primer/octicons-react": "^19.42.0",
