@@ -1,0 +1,29 @@
+.medicalTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--base-size-8);
+  color: var(--fgColor-danger);
+}
+.medicalIcon {
+  display: inline-flex;
+  color: var(--fgColor-danger);
+}
+.profileHead {
+  display: flex;
+  align-items: center;
+  gap: var(--base-size-16);
+}
+.facts {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--base-size-16);
+}
+.facts dt { color: var(--fgColor-muted); font-size: var(--text-body-size-small); }
+.facts dd { margin: var(--base-size-2) 0 0; font-weight: var(--base-text-weight-medium); }
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.contact a { word-break: break-all; }
