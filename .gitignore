@@ -10,3 +10,6 @@ data/*.db-*
 .DS_Store
 coverage/
 test-results/
+
+# Claude Code worktrees
+.claude/worktrees/

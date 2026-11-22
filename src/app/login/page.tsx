@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { inArray } from "drizzle-orm";
 import { db } from "@/db";
-import { users } from "@/db/schema";
+import { schools, users } from "@/db/schema";
 import { getCurrentUser } from "@/lib/auth";
 import { demoModeEnabled } from "@/lib/demo";
 import { LoginView } from "./LoginView";
@@ -24,6 +24,8 @@ export default async function LoginPage({
   searchParams: Promise<{ next?: string }>;
 }) {
   if (await getCurrentUser()) redirect("/");
+  // Brand-new install: no school yet, so start the setup wizard.
+  if (!db.select({ id: schools.id }).from(schools).get()) redirect("/setup");
   const { next } = await searchParams;
   const demo = demoModeEnabled()
     ? db

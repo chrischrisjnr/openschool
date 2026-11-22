@@ -2,7 +2,7 @@
   "name": "open-schools",
   "version": "0.1.0",
   "private": true,
-  "description": "Open Schools — free, open-source school platforms: Assemble (school-family communication), Quad (community chat) and FETE (fundraising).",
+  "description": "Open Schools \u2014 free, open-source school platforms: Assemble (school-family communication), Quad (community chat) and FETE (fundraising).",
   "license": "AGPL-3.0-or-later",
   "scripts": {
     "dev": "next dev",
@@ -10,8 +10,8 @@
     "start": "next start",
     "lint": "tsc --noEmit",
     "db:seed": "tsx scripts/seed.ts",
-    "db:reset": "rm -f data/openschools.db* && tsx scripts/seed.ts",
-    "test": "tsx --test tests/*.test.ts"
+    "db:reset": "tsx scripts/seed.ts --reset",
+    "test": "DATABASE_PATH=:memory: tsx --conditions=react-server --test tests/*.test.ts"
   },
   "dependencies": {
     "@primer/octicons-react": "^19.42.0",
@@ -37,5 +37,8 @@
     "drizzle-kit": "^0.31.11",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2"
+  },
+  "engines": {
+    "node": ">=20.9"
   }
 }

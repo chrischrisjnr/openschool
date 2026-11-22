@@ -1,6 +1,6 @@
 "use client";
 
-import { SignOutIcon, PersonIcon } from "@primer/octicons-react";
+import { GearIcon, PersonIcon, SignOutIcon } from "@primer/octicons-react";
 import { ActionList, ActionMenu } from "@primer/react";
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";
@@ -76,6 +76,14 @@ export function SuiteHeader({ user }: { user: HeaderUser }) {
                 Your account
                 <ActionList.Description variant="block">{user.email}</ActionList.Description>
               </ActionList.LinkItem>
+              {user.role === "admin" ? (
+                <ActionList.LinkItem as={NextLink} href="/admin">
+                  <ActionList.LeadingVisual>
+                    <GearIcon />
+                  </ActionList.LeadingVisual>
+                  School settings
+                </ActionList.LinkItem>
+              ) : null}
             </ActionList.Group>
             <ActionList.Divider />
             <ActionList.Item variant="danger" onSelect={() => formRef.current?.requestSubmit()}>

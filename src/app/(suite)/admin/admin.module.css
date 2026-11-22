@@ -1,0 +1,84 @@
+.page {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: var(--base-size-32) var(--base-size-24) var(--base-size-48);
+}
+.body { padding-top: var(--base-size-24); }
+
+.twoCol {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: var(--base-size-16);
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .twoCol { grid-template-columns: minmax(0, 1fr); }
+  .page { padding: var(--base-size-16) var(--base-size-16) var(--base-size-40); }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--base-size-16);
+}
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
+  gap: var(--base-size-12);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-body-size-medium);
+}
+.table th,
+.table td {
+  text-align: left;
+  padding: var(--base-size-8) var(--base-size-12);
+  border-bottom: var(--borderWidth-thin) solid var(--borderColor-muted);
+  vertical-align: middle;
+}
+.table th {
+  color: var(--fgColor-muted);
+  font-weight: var(--base-text-weight-semibold);
+  font-size: var(--text-body-size-small);
+  background: var(--bgColor-muted);
+}
+.table tr:last-child td { border-bottom: 0; }
+.tableWrap { overflow-x: auto; }
+
+.muted {
+  color: var(--fgColor-muted);
+  font-size: var(--text-body-size-small);
+}
+.person {
+  display: flex;
+  align-items: center;
+  gap: var(--base-size-8);
+}
+.inlineForm {
+  display: flex;
+  gap: var(--base-size-8);
+  align-items: center;
+}
+.code {
+  font-family: var(--fontStack-monospace);
+  font-size: var(--text-body-size-small);
+  background: var(--bgColor-muted);
+  padding: var(--base-size-2) var(--base-size-6);
+  border-radius: var(--borderRadius-small);
+}
+.pre {
+  font-family: var(--fontStack-monospace);
+  font-size: var(--text-caption-size);
+  background: var(--bgColor-muted);
+  padding: var(--base-size-12);
+  border-radius: var(--borderRadius-medium);
+  overflow-x: auto;
+  white-space: pre;
+  margin: 0;
+}
+.problems {
+  white-space: pre-line;
+}
